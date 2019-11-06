@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+        <button class="ui green button right" style="float:right;" href="{% url 'bookmark:index' %}">Add Bookmark</button>
+    <div style="clear:both;"></div>
+    <table class="ui celled table" style="margin-top:10px;">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Site</th>
+            <th scope="col">URL</th>
+            <th scope="col">Modify</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bookmark in bookmark_list %}
+            <tr>
+                <td data-label="#">{{ forloop.counter }}</td>
+                <td data-label="Site">
+                    <a href="#">
+                        {{ bookmark.site_name }}
+                    </a>
+                </td>
+                <td data-label="URL">
+                    <a href="{{ bookmark.url }}">
+                        {{ bookmark.url }}
+                    </a>
+                </td>
+                <td data-label="Modify">
+                    <a class="ui blue button" href="#">
+                        Modify
+                    </a>
+                </td>
+                <td data-label="Delete">
+                    <a class="ui red button" href="#">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
