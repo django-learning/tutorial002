@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-        <button class="ui green button right" style="float:right;" href="{% url 'bookmark:index' %}">Add Bookmark</button>
+        <a class="ui green button right" style="float:right;" href="{% url 'bookmark:create' %}">Add Bookmark</a>
     <div style="clear:both;"></div>
     <table class="ui celled table" style="margin-top:10px;">
         <thead>
@@ -18,7 +18,7 @@
             <tr>
                 <td data-label="#">{{ forloop.counter }}</td>
                 <td data-label="Site">
-                    <a href="#">
+                    <a href="{% url 'bookmark:detail' bookmark.id %}">
                         {{ bookmark.site_name }}
                     </a>
                 </td>
