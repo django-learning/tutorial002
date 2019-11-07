@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-        <a class="ui green button right" style="float:right;" href="{% url 'bookmark:create' %}">Add Bookmark</a>
+    <a class="ui green button right" style="float:right;" href="{% url 'bookmark:create' %}">Add Bookmark</a>
     <div style="clear:both;"></div>
     <table class="ui celled table" style="margin-top:10px;">
         <thead>
@@ -28,12 +28,12 @@
                     </a>
                 </td>
                 <td data-label="Modify">
-                    <a class="ui blue button" href="#">
+                    <a class="ui blue button" href="{% url 'bookmark:update' bookmark.id %}">
                         Modify
                     </a>
                 </td>
                 <td data-label="Delete">
-                    <a class="ui red button" href="#">
+                    <a class="ui red button" href="{% url 'bookmark:delete' bookmark.id %}">
                         Delete
                     </a>
                 </td>
